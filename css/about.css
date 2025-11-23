@@ -1,0 +1,114 @@
+/* About Page Specific Styles */
+#about {
+    background-color: var(--darker-bg);
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.image-stack {
+    display: grid;
+    grid-template-areas: "stack";
+    position: relative;
+    height: 400px;
+}
+
+.image-stack__item {
+    grid-area: stack;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    opacity: 0;
+    animation: slideInLeft 0.8s ease forwards;
+}
+
+.image-stack__item--bottom {
+    justify-self: start;
+    align-self: start;
+    width: 85%;
+    z-index: 1;
+    animation-delay: 0.2s;
+}
+
+.image-stack__item--top {
+    justify-self: end;
+    align-self: end;
+    width: 75%;
+    z-index: 2;
+    animation-delay: 0.4s;
+}
+
+.image-stack img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.about-content {
+    text-align: left;
+    opacity: 0;
+    animation: slideInRight 0.8s ease 0.3s forwards;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent);
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.about-content button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.8s forwards;
+}
+
+.about-content button:hover {
+    background: var(--accent-light);
+}
+
+/* About Page Responsive */
+@media (max-width: 1024px) {
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .about-content {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        padding: 20px 15px;
+    }
+    
+    .about-content h2 {
+        font-size: 2rem;
+    }
+    
+    .image-stack {
+        height: 300px;
+    }
+}

@@ -1,0 +1,309 @@
+/* Single Recipe Page Specific Styles - Extends style.css and uses variables */
+#single-recipe {
+    background-color: var(--darker-bg); /* Match the recipes/gallery background */
+    min-height: 100vh;
+    padding: 120px 2rem 4rem; /* Extra top padding for fixed nav and extra bottom space */
+}
+
+.recipe-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Header Section with Image */
+.recipe-header-section {
+    position: relative;
+    height: 400px;
+}
+
+.recipe-header-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.recipe-title-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    /* --- MODIFIED GRADIENT: Darker and extends to 50% height for contrast --- */
+    background: linear-gradient(
+        to top, 
+        rgba(0, 0, 0, 0.9) 0%, 
+        rgba(0, 0, 0, 0.6) 50%, 
+        transparent 100%
+    );
+    color: white;
+}
+
+.recipe-title-overlay h1 {
+    font-size: 3rem;
+    color: var(--accent);
+    margin: 0 0 0.5rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.recipe-summary {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin-bottom: 1rem;
+    /* --- NEW CODE: Text Shadow for better contrast on secondary text --- */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Metadata Bar (Time, Servings, Difficulty) */
+.recipe-metadata {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: var(--text);
+    /* --- NEW CODE: Text Shadow for metadata --- */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.meta-item i {
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+/* Content Sections (Ingredients, Instructions) */
+.recipe-content-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    padding: 3rem;
+    text-align: left;
+}
+
+.content-sidebar h2,
+.content-main h2 {
+    color: var(--accent);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.content-sidebar h2::after,
+.content-main h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent);
+}
+
+/* Ingredients List */
+.ingredients-list {
+    list-style: none;
+    padding: 0;
+}
+
+.ingredients-list li {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.ingredients-list li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Style for checked-off ingredients (via single-recipe.js) */
+.ingredients-list li.checked {
+    opacity: 0.6;
+    background-color: rgba(255, 255, 255, 0.03);
+    text-decoration: line-through;
+    border-left-color: var(--text-secondary);
+}
+
+.ingredient-name {
+    font-weight: 600;
+}
+
+.ingredient-amount {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Instructions */
+.instructions-list {
+    list-style: none;
+    padding: 0;
+    counter-reset: step-counter; /* For numbering via CSS */
+}
+
+.instructions-list li {
+    margin-bottom: 2rem;
+    padding-left: 3rem;
+    position: relative;
+    line-height: 1.6;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.instructions-list li::before {
+    content: counter(step-counter);
+    counter-increment: step-counter;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--accent);
+    color: var(--darker-bg);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* Style for the currently highlighted instruction step (via single-recipe.js) */
+.instructions-list li.highlighted-step {
+    background-color: rgba(255, 191, 0, 0.1); /* Light amber background */
+    border-radius: 8px;
+    /* Adjust padding to make background full width */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-left: -3rem;
+    padding-left: 3rem;
+}
+
+.instructions-list p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--text);
+}
+
+/* Nutritional Facts Section Styles */
+.nutritional-facts {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    margin-top: 3rem; 
+}
+
+.nutritional-facts h3 {
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.fact-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.fact-item:nth-child(2) {
+    /* Ensures separation on the same row */
+    padding-left: 1.5rem; 
+}
+
+.fact-item:last-child {
+    border-bottom: none;
+}
+
+.fact-label {
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.fact-value {
+    font-weight: 700;
+    color: var(--text);
+}
+
+.disclaimer {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+/* Notes & Tips */
+.recipe-notes {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-left: 5px solid var(--accent); 
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 3rem;
+}
+
+.recipe-notes h3 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.recipe-notes p {
+    color: var(--text-secondary);
+    font-style: italic;
+    line-height: 1.5;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .recipe-content-section {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+        gap: 2rem;
+    }
+    /* ... (Rest of existing media queries) ... */
+    .instructions-list li.highlighted-step {
+        margin-left: 0;
+        padding-left: 2.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    /* ... (Rest of existing media queries) ... */
+    .facts-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .fact-item:nth-child(2) {
+        padding-left: 0; 
+    }
+}
