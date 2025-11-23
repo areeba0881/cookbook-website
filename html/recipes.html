@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes - Flavor Fusion</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/recipes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <i class="fas fa-utensils"></i>
+            <span>Flavor Fusion</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="recipes.html">Recipes</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <section id="recipes" class="page">
+        <div class="recipes-header">
+            <h2 class="section-title">Our Recipes</h2>
+            <p class="recipes-subtitle">Discover amazing dishes from around the world</p>
+        </div>
+
+        <!-- Recipe Filter -->
+        <div class="recipe-filters">
+            <button class="filter-btn active" data-filter="all">All Recipes</button>
+            <button class="filter-btn" data-filter="main-course">Main Course</button>
+            <button class="filter-btn" data-filter="dessert">Desserts</button>
+            <button class="filter-btn" data-filter="appetizer">Appetizers</button>
+            <button class="filter-btn" data-filter="vegetarian">Vegetarian</button>
+        </div>
+
+        <!-- Recipes Grid -->
+        <div class="recipes-grid">
+            <!-- Recipe 1 -->
+            <div class="recipe-card" data-category="main-course">
+                <div class="recipe-image">
+                    <img src="images/pizza.webp" alt="Truffle Mushroom Pizza">
+                    <div class="recipe-badge">Main Course</div>
+                </div>
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Truffle Mushroom Pizza</h3>
+                    <p class="recipe-description">A pizza with wild mushrooms, truffle oil, and three types of cheese on a thin, crispy crust.</p>
+                    <div class="recipe-meta">
+                        <span class="recipe-time"><i class="fas fa-clock"></i> 30 mins</span>
+                        <span class="recipe-difficulty"><i class="fas fa-fire"></i> Medium</span>
+                        <span class="recipe-servings"><i class="fas fa-user-friends"></i> 2-3 servings</span>
+                    </div>
+                    <div class="recipe-actions">
+                        <a href="pizza.html" class="view-recipe-btn">View Recipe</a> 
+                        <button class="save-recipe-btn"><i class="far fa-bookmark"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 2 -->
+            <div class="recipe-card" data-category="main-course">
+                <div class="recipe-image">
+                    <img src="images/burger.jpg" alt="Gourmet Burger">
+                    <div class="recipe-badge">Main Course</div>
+                </div>
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Ultimate Gourmet Burger</h3>
+                    <p class="recipe-description">Juicy beef patty with caramelized onions, special sauce, and artisan bun.</p>
+                    <div class="recipe-meta">
+                        <span class="recipe-time"><i class="fas fa-clock"></i> 35 mins</span>
+                        <span class="recipe-difficulty"><i class="fas fa-fire"></i> Medium</span>
+                        <span class="recipe-servings"><i class="fas fa-user-friends"></i> 4 servings</span>
+                    </div>
+                    <div class="recipe-actions">
+                        <a href="burger.html" class="view-recipe-btn">View Recipe</a> 
+                        <button class="save-recipe-btn"><i class="far fa-bookmark"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 3 -->
+            <div class="recipe-card" data-category="main-course">
+                <div class="recipe-image">
+                    <img src="images/pasta.jpg" alt="Creamy Pasta">
+                    <div class="recipe-badge">Main Course</div>
+                </div>
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Creamy Garlic Parmesan Pasta</h3>
+                    <p class="recipe-description">Rich and creamy pasta with garlic, parmesan, and fresh herbs.</p>
+                    <div class="recipe-meta">
+                        <span class="recipe-time"><i class="fas fa-clock"></i> 25 mins</span>
+                        <span class="recipe-difficulty"><i class="fas fa-fire"></i> Easy</span>
+                        <span class="recipe-servings"><i class="fas fa-user-friends"></i> 4 servings</span>
+                    </div>
+                    <div class="recipe-actions">
+                        <a href="pasta.html" class="view-recipe-btn">View Recipe</a> 
+                        <button class="save-recipe-btn"><i class="far fa-bookmark"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 4 -->
+            <div class="recipe-card" data-category="dessert">
+                <div class="recipe-image">
+                    <img src="images/cake.jpg" alt="Chocolate Cake">
+                    <div class="recipe-badge">Dessert</div>
+                </div>
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Decadent Chocolate Cake</h3>
+                    <p class="recipe-description">Rich, moist chocolate cake with creamy chocolate frosting.</p>
+                    <div class="recipe-meta">
+                        <span class="recipe-time"><i class="fas fa-clock"></i> 65 mins</span>
+                        <span class="recipe-difficulty"><i class="fas fa-fire"></i> Medium</span>
+                        <span class="recipe-servings"><i class="fas fa-user-friends"></i> 12 servings</span>
+                    </div>
+                    <div class="recipe-actions">
+                        <a href="chocolateCake.html" class="view-recipe-btn">View Recipe</a> 
+                        <button class="save-recipe-btn"><i class="far fa-bookmark"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 5 -->
+            <div class="recipe-card" data-category="vegetarian">
+                <div class="recipe-image">
+                    <img src="images/Mediteranean-Quinoa-Salad.jpg" alt="Fresh Salad">
+                    <div class="recipe-badge">Vegetarian</div>
+                </div>
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Mediterranean Quinoa Salad</h3>
+                    <p class="recipe-description">Healthy quinoa salad with feta, olives, and fresh vegetables.</p>
+                    <div class="recipe-meta">
+                        <span class="recipe-time"><i class="fas fa-clock"></i> 30 mins</span>
+                        <span class="recipe-difficulty"><i class="fas fa-fire"></i> Easy</span>
+                        <span class="recipe-servings"><i class="fas fa-user-friends"></i> 4 servings</span>
+                    </div>
+                    <div class="recipe-actions">
+                        <a href="salad.html" class="view-recipe-btn">View Recipe</a> 
+                        <button class="save-recipe-btn"><i class="far fa-bookmark"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 6 -->
+            <div class="recipe-card" data-category="appetizer">
+                <div class="recipe-image">
+                    <img src="images/sushi.jpeg" alt="Assorted Sushi">
+                    <div class="recipe-badge">Appetizer</div>
+                </div>
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Assorted Sushi Platter</h3>
+                    <p class="recipe-description">Fresh sushi with salmon, tuna, avocado, and cucumber.</p>
+                    <div class="recipe-meta">
+                        <span class="recipe-time"><i class="fas fa-clock"></i> 60 mins</span>
+                        <span class="recipe-difficulty"><i class="fas fa-fire"></i> Hard</span>
+                        <span class="recipe-servings"><i class="fas fa-user-friends"></i> 4-6 servings</span>
+                    </div>
+                    <div class="recipe-actions">
+                        <a href="sushi.html" class="view-recipe-btn">View Recipe</a> 
+                        <button class="save-recipe-btn"><i class="far fa-bookmark"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Flavor Fusion Cookbook. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/recipes.js"></script>
+</body>
+</html>
